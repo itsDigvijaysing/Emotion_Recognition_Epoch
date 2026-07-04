@@ -1,2 +1,11 @@
 archive/
 archive.zip
+*.pth
+*.pkl
+*.docx
+dummy_audio_*.wav
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.venv/
+.DS_Store

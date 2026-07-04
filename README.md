@@ -44,7 +44,8 @@ The project is structured into several phases:
 
 ## Files
 
-- `your_script_name.ipynb` or `your_script_name.py`: The main Python script containing the entire implementation.
+- `Final_Epoch_Emotion_Recog.ipynb`: Main notebook with the full multimodal pipeline.
+- `trial.ipynb`: Earlier draft notebook; prefer `Final_Epoch_Emotion_Recog.ipynb` for complete results.
 - `RAVDESS_PATH` (configurable): Path to the RAVDESS dataset directory (e.g., `./archive/audio_speech_actors_01-24/`).
 - `AudioCNN_best.pth`: Saved weights for the best performing Audio CNN model.
 - `TextRNN_best.pth`: Saved weights for the best performing Text RNN model.
@@ -72,10 +73,10 @@ Key Python libraries needed:
 - `Pillow`
 - `python-docx` (for generating the report)
 
-You can typically install these using pip:
+You can install dependencies with:
 
 ```bash
-pip install torch torchaudio torchvision transformers librosa openai-whisper numpy pandas scikit-learn matplotlib seaborn soundfile Pillow python-docx
+pip install -r requirements.txt
 ```
 
 You might also need ffmpeg for Whisper:
@@ -99,15 +100,11 @@ brew install ffmpeg
         - `USE_SIMULATED_SENTENCES`: Set to `True` (default) to use emotion-specific sentences for the text modality, or `False` to use Whisper-generated transcripts from the (limited) RAVDESS statements.
         - Adjust `EPOCHS_*` and `LEARNING_RATE_*` variables if needed.
 
-4. **Execute the Script:**
+4. **Run the notebook:**
 
-        ```bash
-        python your_script_name.py
-        ```
+        Open and execute `Final_Epoch_Emotion_Recog.ipynb` in Jupyter.
 
-        Or run the cells in `your_script_name.ipynb` if using a Jupyter Notebook.
-
-        The script will:
+        The notebook will:
         - Load and preprocess data.
         - Train and evaluate unimodal models.
         - Train and evaluate multimodal fusion models.
